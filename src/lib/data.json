@@ -1,0 +1,145 @@
+{
+    "solutions": [
+        {
+            "id": "iptv",
+            "title": "IPTV",
+            "description": "Solutions complètes IPTV pour la distribution de la télévision sur IP, idéales pour l'hôtellerie, les hôpitaux et les collectivités.",
+            "features": [
+                "VOD",
+                "Interface Personnalisable",
+                "Haute Définition"
+            ]
+        },
+        {
+            "id": "dvb-t-c",
+            "title": "DVB-T / DVB-C",
+            "description": "Têtes de station professionnelles pour le traitement et la distribution des signaux TNT et Câble, garantissant une réception optimale.",
+            "features": [
+                "Transmodulation",
+                "Haute Densité",
+                "Monitoring à Distance",
+                "Redondance"
+            ]
+        },
+        {
+            "id": "bis",
+            "title": "Bande Intermédiaire Satellite (BIS)",
+            "description": "Réseaux de distribution satellite complexes (BIS commutée, BIS transposée) pour la réception multi-satellites dans les grands ensembles.",
+            "features": [
+                "Large Bande",
+                "Amplification Performante",
+                "Multiswitches Cascadables",
+                "Faible Bruit"
+            ]
+        }
+    ],
+    "catalogue": {
+        "tete-de-station-et-fibre": {
+            "name": "Tête de station & Fibre",
+            "products": [
+                {
+                    "id": "p1",
+                    "name": "Station DVB-T Modulaire 8 Canaux",
+                    "description": "Tête de station haute densité pour la conversion satellite vers TNT.",
+                    "image": "/images/station-dvbt.jpg"
+                },
+                {
+                    "id": "p2",
+                    "name": "Modulateur HDMI vers DVB-T",
+                    "description": "Encodeur et modulateur professionnel pour injecter des canaux HDMI sur le réseau coaxial.",
+                    "image": "/images/modulateur-hdmi.jpg"
+                },
+                {
+                    "id": "p3",
+                    "name": "Émetteur Optique 1550nm",
+                    "description": "Transmission du signal RF sur fibre optique avec une puissance de sortie élevée.",
+                    "image": "/images/emetteur-optique.jpg"
+                },
+                {
+                    "id": "p4",
+                    "name": "Récepteur Optique de Bâtiment",
+                    "description": "Conversion optique vers RF pour les installations FTTH coaxiales.",
+                    "image": "/images/recepteur-optique.jpg"
+                }
+            ]
+        },
+        "amplification-et-distribution": {
+            "name": "Amplification & Distribution",
+            "products": [
+                {
+                    "id": "p5",
+                    "name": "Multiswitch Cascadable 9x32",
+                    "description": "Commutateur pour 2 satellites et signal terrestre, avec 32 sorties utilisateurs.",
+                    "image": "/images/multiswitch.jpg"
+                },
+                {
+                    "id": "p6",
+                    "name": "Amplificateur de Ligne BIS",
+                    "description": "Amplification 30dB pour compenser les pertes sur les longues distances.",
+                    "image": "/images/ampli-bis.jpg"
+                },
+                {
+                    "id": "p7",
+                    "name": "Centrale Amplificatrice Programmable",
+                    "description": "Filtrage et amplification des canaux UHF/VHF avec réglage auto.",
+                    "image": "/images/centrale-uhf.jpg"
+                },
+                {
+                    "id": "p8",
+                    "name": "Dérivateur 4 Voies 15dB",
+                    "description": "Dérivateur blindé haute qualité pour réseaux de distribution.",
+                    "image": "/images/derivateur.jpg"
+                }
+            ]
+        },
+        "reception-et-connectique": {
+            "name": "Réception & Connectique",
+            "products": [
+                {
+                    "id": "p9",
+                    "name": "Antenne UHF Haute Performance",
+                    "description": "Antenne terrestre optimisée pour le rejet 4G/5G.",
+                    "image": "/images/antenne-uhf.jpg"
+                },
+                {
+                    "id": "p10",
+                    "name": "LNB Quattro Professionnel",
+                    "description": "Tête de réception satellite spéciale multiswitches avec très faible bruit (0.1dB).",
+                    "image": "/images/lnb-quattro.jpg"
+                },
+                {
+                    "id": "p11",
+                    "name": "Câble Coaxial VATC 17",
+                    "description": "Câble cuivre pour liaisons de haute qualité (bobine de 100m).",
+                    "image": "/images/cable-coax.jpg"
+                },
+                {
+                    "id": "p12",
+                    "name": "Prise TV/FM/SAT Optique",
+                    "description": "Terminaison pour les réseaux FTTH avec sorties RF séparées.",
+                    "image": "/images/prise-tv.jpg"
+                }
+            ]
+        }
+    },
+    "realisations": [
+        {
+            "id": "r1",
+            "title": "Hôtel 5 Étoiles - IPTV",
+            "description": "Installation complète d'une tête de station IPTV pour 300 chambres.",
+            "image": "/images/realisation-hotel.jpg"
+        },
+        {
+            "id": "r2",
+            "title": "Hôpital Régional - DVB-T",
+            "description": "Rénovation du réseau coaxial et modernisation de la tête de station avec transmodulation.",
+            "image": "/images/realisation-hopital.jpg"
+        },
+        {
+            "id": "r3",
+            "title": "Campus Universitaire - Fibre",
+            "description": "Déploiement fibre optique pour la télédistribution sur l'ensemble du campus (15 bâtiments).",
+            "image": "/images/realisation-campus.jpg"
+        }
+    ]
+}
