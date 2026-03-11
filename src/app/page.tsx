@@ -1,4 +1,3 @@
-import { BentoGrid, BentoGridItem } from "@/components/BentoGrid";
 import data from "@/lib/data.json";
 import {
   MonitorPlay,
@@ -8,6 +7,10 @@ import {
   Wrench,
   HeadphonesIcon,
   ArrowRight,
+  Building2,
+  Briefcase,
+  Landmark,
+  Globe2,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -32,6 +35,14 @@ export default function Home() {
       headerBg: "from-slate-50 to-gray-100/50",
       image: "/BIS.jpg",
     },
+  };
+
+  const partnerIcons: Record<string, any> = {
+    Building2,
+    Briefcase,
+    Landmark,
+    Globe2,
+    ShieldCheck,
   };
 
   return (
@@ -69,17 +80,11 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 w-full sm:w-auto">
             <Link
-              href="#solutions"
+              href="#entreprise"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-red-600/90 backdrop-blur-sm text-white font-bold hover:bg-red-600 transition-colors shadow-lg shadow-red-900/50 border border-red-500/50 hover:border-red-500"
             >
-              Découvrir nos solutions
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              href="#entreprise"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-slate-900/40 backdrop-blur-md text-white font-semibold border border-white/20 hover:bg-slate-800/60 hover:border-white/40 transition-all shadow-lg"
-            >
               Notre Expertise
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
 
@@ -92,74 +97,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Clients / Social Proof strip ── */}
-      <div className="bg-slate-50 border-y border-gray-200 py-5 px-4">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-10 text-sm font-medium text-slate-400 tracking-widest uppercase text-xs">
-          {["Hôtellerie", "Hôpitaux", "Collectivités", "Résidences", "Universités"].map(
-            (label) => (
-              <span key={label}>{label}</span>
-            )
-          )}
-        </div>
-      </div>
+      {/* ── Clients / Social Proof strip Removed ── */}
 
-      {/* ── Solutions Section (Bento Grid) ── */}
-      <section id="solutions" className="py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16 space-y-3">
-            <p className="text-sm font-semibold tracking-widest uppercase text-red-600">
-              Nos Solutions
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 max-w-xl">
-              Des infrastructures robustes et évolutives
-            </h2>
-            <p className="text-slate-600 max-w-2xl leading-relaxed">
-              Garantissant une diffusion ininterrompue et une gestion centralisée,
-              adaptées à vos contraintes métier.
-            </p>
+      {/* ── Solutions Section (Bento Grid) Removed ── */}
+
+      {/* ── Affichage Dynamique ── */}
+      <section className="py-24 px-4 bg-white text-slate-900 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          {/* Left: Video */}
+          <div className="w-full lg:w-1/2 relative rounded-3xl overflow-hidden shadow-xl shadow-slate-200 group border border-gray-100">
+            <video
+              src="/animationDS.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto aspect-video object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out"
+            />
+            {/* Subtle overlay to blend the video nicely */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/10 via-transparent to-transparent pointer-events-none" />
           </div>
 
-          <BentoGrid className="max-w-full">
-            {data.solutions.map((solution) => {
-              const config =
-                solutionConfig[solution.id as keyof typeof solutionConfig];
-              return (
-                <BentoGridItem
-                  key={solution.id}
-                  title={solution.title}
-                  description={
-                    <div className="space-y-4">
-                      <p className="text-slate-600">{solution.description}</p>
-                      <ul className="text-sm text-slate-500 space-y-1.5 mt-2">
-                        {solution.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  }
-                  header={
-                    <div
-                      className={`relative flex flex-1 w-full h-full min-h-[10rem] rounded-xl bg-gradient-to-br ${config.headerBg} border border-gray-100 overflow-hidden group/header`}
-                    >
-                      {config.image && (
-                        <Image
-                          src={config.image as string}
-                          alt={String(solution.title)}
-                          fill
-                          className="object-cover transition-transform duration-700 ease-out group-hover/bento:scale-105"
-                        />
-                      )}
-                    </div>
-                  }
-                  className={config.colSpan}
-                  icon={config.icon}
-                />
-              );
-            })}
-          </BentoGrid>
+          {/* Right: Content */}
+          <div className="w-full lg:w-1/2 space-y-8">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 text-red-600 text-sm font-semibold tracking-wide border border-red-100">
+                <MonitorPlay className="w-4 h-4" />
+                <span>AFFICHAGE DYNAMIQUE</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+                Communiquez en temps <span className="text-red-600">réel</span> avec vos audiences
+              </h2>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                Modernisez votre communication interne et externe. Diffusez, programmez 
+                et centralisez vos contenus multimédias sur un réseau d'écrans professionnels 
+                depuis une interface web intuitive.
+              </p>
+            </div>
+
+            <ul className="space-y-5 pt-4 border-t border-gray-100">
+              {[
+                { 
+                  title: "Gestion centralisée & Cloud", 
+                  desc: "Pilotez des dizaines d'écrans en simultané, où que vous soyez.",
+                  icon: <Globe2 className="w-5 h-5 text-red-600" />
+                },
+                { 
+                  title: "Contenus Riches", 
+                  desc: "Vidéos, images promotionnelles, flux RSS virtuels, et widgets météo.",
+                  icon: <Radio className="w-5 h-5 text-red-600" />
+                },
+                { 
+                  title: "Planification Intelligente", 
+                  desc: "Programmez des campagnes sur-mesure selon l'heure ou l'audience.",
+                  icon: <Satellite className="w-5 h-5 text-red-600" />
+                }
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-slate-900 font-bold text-lg">{item.title}</h4>
+                    <p className="text-slate-500 leading-relaxed mt-1 text-sm">{item.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -212,8 +217,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Nos Collaborateurs ── */}
+      <section className="py-24 px-4 bg-white border-t border-gray-200">
+        <div className="max-w-7xl mx-auto text-center space-y-12">
+          <div className="space-y-3">
+            <p className="text-sm font-semibold tracking-widest uppercase text-red-600">
+              Partenaires
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900">
+              Nos Collaborateurs
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+              Ils nous font confiance pour bâtir des solutions robustes et pérennes.
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+            {data.collaborateurs.map((collab) => {
+              const isImage = collab.logo.startsWith("/") || collab.logo.startsWith("http");
+              const IconComp = !isImage ? (partnerIcons[collab.logo] || Building2) : null;
+              
+              return (
+                <div key={collab.id} className="flex flex-col items-center gap-4 group cursor-pointer">
+                  <div className="w-24 h-24 relative bg-slate-50 border border-gray-200 rounded-full flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:border-red-300 transition-all duration-300 overflow-hidden">
+                    {isImage ? (
+                      <Image 
+                        src={collab.logo} 
+                        alt={collab.name} 
+                        width={60} 
+                        height={60} 
+                        className="object-contain group-hover:scale-110 transition-transform duration-300"
+                      />
+                    ) : (
+                      IconComp && <IconComp className="w-10 h-10 text-slate-400 group-hover:text-red-500 transition-colors duration-300" />
+                    )}
+                  </div>
+                  <span className="text-sm font-bold text-slate-700 group-hover:text-red-600 transition-colors uppercase tracking-wider">
+                    {collab.name}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA Banner ── */}
-      <section className="py-20 px-4 bg-white border-t border-gray-200">
+      <section className="py-20 px-4 bg-slate-50 border-t border-gray-200">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
             Un projet de télédistribution ?

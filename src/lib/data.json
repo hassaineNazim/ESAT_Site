@@ -141,5 +141,32 @@
             "description": "Déploiement fibre optique pour la télédistribution sur l'ensemble du campus (15 bâtiments).",
             "image": "/images/realisation-campus.jpg"
         }
+    ],
+    "collaborateurs": [
+        {
+            "id": "collab-1",
+            "name": "Partenaire A",
+            "logo": "Building2"
+        },
+        {
+            "id": "collab-2",
+            "name": "Partenaire B",
+            "logo": "Briefcase"
+        },
+        {
+            "id": "collab-3",
+            "name": "Partenaire C",
+            "logo": "Landmark"
+        },
+        {
+            "id": "collab-4",
+            "name": "Partenaire D",
+            "logo": "Globe2"
+        },
+        {
+            "id": "collab-5",
+            "name": "Partenaire E",
+            "logo": "ShieldCheck"
+        }
     ]
 }
