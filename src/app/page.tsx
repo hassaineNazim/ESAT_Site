@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { BentoGrid, BentoGridItem } from "@/components/BentoGrid";
+import { ContactSection } from "@/components/ContactSection";
 
 export default function Home() {
   const solutionConfig = {
@@ -99,27 +101,25 @@ export default function Home() {
 
       {/* ── Clients / Social Proof strip Removed ── */}
 
-      {/* ── Solutions Section (Bento Grid) Removed ── */}
-
       {/* ── Affichage Dynamique ── */}
       <section className="py-24 px-4 bg-white text-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Left: Video */}
-          <div className="w-full lg:w-1/2 relative rounded-3xl overflow-hidden shadow-xl shadow-slate-200 group border border-gray-100">
+          <div className="w-full lg:w-3/5 relative rounded-3xl overflow-hidden group">
             <video
-              src="/animationDS.mp4"
               autoPlay
               loop
               muted
               playsInline
-              className="w-full h-auto aspect-video object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out"
-            />
-            {/* Subtle overlay to blend the video nicely */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/10 via-transparent to-transparent pointer-events-none" />
+              className="w-full h-auto aspect-video object-cover transform transition-transform duration-1000 ease-out"
+            >
+              <source src="/animationDS.mp4" type="video/mp4" />
+              Votre navigateur ne supporte pas la balise vidéo.
+            </video>
           </div>
 
           {/* Right: Content */}
-          <div className="w-full lg:w-1/2 space-y-8">
+          <div className="w-full lg:w-2/5 space-y-8">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 text-red-600 text-sm font-semibold tracking-wide border border-red-100">
                 <MonitorPlay className="w-4 h-4" />
@@ -165,6 +165,44 @@ export default function Home() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* ── Solutions Section (Bento Grid) ── */}
+      <section id="solutions" className="py-24 px-4 bg-white relative">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="text-center space-y-4 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">
+              Nos Solutions <span className="text-red-500">Techniques</span>
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Des infrastructures fiables et évolutives, de la réception satellite jusqu'à l'écran final.
+            </p>
+          </div>
+
+          <BentoGrid className="max-w-5xl mx-auto">
+            <BentoGridItem
+              title="IPTV & Réseaux IP"
+              description="Distribution de flux audiovisuels sur réseau IP. Idéal pour l'hôtellerie et les hôpitaux avec des services interactifs sur mesure."
+              icon={solutionConfig.iptv.icon}
+              className={solutionConfig.iptv.colSpan}
+              header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-red-50 to-rose-100/50" />}
+            />
+            <BentoGridItem
+              title="DVB-T/C (Coaxial)"
+              description="Têtes de station compactes pour une diffusion classique et robuste sur vos réseaux coaxiaux existants."
+              icon={solutionConfig["dvb-t-c"].icon}
+              className={solutionConfig["dvb-t-c"].colSpan}
+              header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-slate-50 to-gray-100/50" />}
+            />
+            <BentoGridItem
+              title="Réception BIS"
+              description="Solutions de réception satellite et terrestre professionnelles, traitant les signaux avec une très haute fiabilité."
+              icon={solutionConfig.bis.icon}
+              className={solutionConfig.bis.colSpan}
+              header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-slate-50 to-gray-100/50" />}
+            />
+          </BentoGrid>
         </div>
       </section>
 
@@ -262,35 +300,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA Banner ── */}
-      <section className="py-20 px-4 bg-slate-50 border-t border-gray-200">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-            Un projet de télédistribution ?
-          </h2>
-          <p className="text-slate-600 text-lg">
-            Décrivez-nous votre besoin. Notre équipe ingénierie vous répond sous 48h
-            avec une étude technique préliminaire.
-          </p>
-          <a
-            href="mailto:contact@entreprise.dz?subject=Demande de contact - Projet Télédistribution"
-            className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-red-600 text-white font-bold text-lg hover:bg-red-700 transition-colors shadow-md shadow-red-200"
-          >
-            Discutons de votre projet
-            <ArrowRight className="w-5 h-5" />
-          </a>
-        </div>
-      </section>
+
+      {/* ── Contact Section ── */}
+      <ContactSection />
 
       {/* ── Footer ── */}
       <footer className="py-8 border-t border-gray-200 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p>© {new Date().getFullYear()} ESAT. Solutions Réseaux B2B.</p>
           <a
-            href="mailto:contact@entreprise.dz"
+            href="mailto:contact@esat.dz"
             className="text-red-600 hover:text-red-700 font-medium transition-colors"
           >
-            contact@entreprise.dz
+            contact@esat.dz
           </a>
         </div>
       </footer>

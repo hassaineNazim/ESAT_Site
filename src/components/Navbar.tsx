@@ -117,7 +117,7 @@ export default function Navbar() {
                 {/* Desktop CTA */}
                 <div className="hidden md:flex">
                     <a
-                        href="mailto:contact@entreprise.dz"
+                        href="mailto:contact@esat.dz"
                         className="px-5 py-2.5 rounded-full bg-red-600 text-white font-semibold text-sm hover:bg-red-700 transition-colors shadow-sm"
                     >
                         Contact
@@ -165,7 +165,7 @@ export default function Navbar() {
 
                             <Link href="/#entreprise" className="text-slate-700 font-medium p-3 hover:bg-gray-50 rounded-lg" onClick={() => setIsMobileMenuOpen(false)}>L'Entreprise</Link>
                             <a
-                                href="mailto:contact@entreprise.dz"
+                                href="mailto:contact@esat.dz"
                                 className="mt-2 px-4 py-3 text-center rounded-xl bg-red-600 text-white font-semibold text-sm hover:bg-red-700 transition-colors"
                             >
                                 Nous Contacter

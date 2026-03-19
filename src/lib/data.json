@@ -167,6 +167,11 @@
             "id": "collab-5",
             "name": "Partenaire E",
             "logo": "ShieldCheck"
+        },
+        {
+            "id": "collab-lg",
+            "name": "LG",
+            "logo": "/collaborateurs/lg_logo_icon_170264.svg"
         }
     ]
 }
