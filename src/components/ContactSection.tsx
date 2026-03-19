@@ -2,7 +2,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export function ContactSection() {
   return (
-    <section className="py-24 px-4 bg-white">
+    <section id="contact" className="py-24 px-4 bg-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Colonne de gauche (Informations de contact) */}
         <div className="space-y-10">
@@ -11,7 +11,7 @@ export function ContactSection() {
               Discutons de votre projet
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
-              Nos experts en télédistribution et affichage dynamique sont à votre disposition pour vous accompagner, de l'audit initial jusqu'au maintien en condition opérationnelle.
+              Nos experts en télédistribution et affichage dynamique sont à votre disposition pour vous accompagner.
             </p>
           </div>
 

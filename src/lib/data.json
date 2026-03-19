@@ -144,34 +144,29 @@
     ],
     "collaborateurs": [
         {
-            "id": "collab-1",
-            "name": "Partenaire A",
-            "logo": "Building2"
+            "id": "collab-lg",
+            "name": "LG",
+            "logo": "/collaborateurs/lg_logo_icon_170264.svg"
         },
         {
-            "id": "collab-2",
-            "name": "Partenaire B",
-            "logo": "Briefcase"
+            "id": "collab-alcad",
+            "name": "Alcad",
+            "logo": "/collaborateurs/Alcad.svg"
         },
         {
-            "id": "collab-3",
-            "name": "Partenaire C",
-            "logo": "Landmark"
+            "id": "collab-teletek",
+            "name": "Teletek",
+            "logo": "/collaborateurs/TELETEK.jpg"
         },
         {
-            "id": "collab-4",
-            "name": "Partenaire D",
-            "logo": "Globe2"
+            "id": "collab-polytron",
+            "name": "Polytron",
+            "logo": "/collaborateurs/polytron.png"
         },
         {
             "id": "collab-5",
             "name": "Partenaire E",
             "logo": "ShieldCheck"
-        },
-        {
-            "id": "collab-lg",
-            "name": "LG",
-            "logo": "/collaborateurs/lg_logo_icon_170264.svg"
         }
     ]
 }

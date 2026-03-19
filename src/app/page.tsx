@@ -69,12 +69,11 @@ export default function Home() {
           <h1 className="text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.08] drop-shadow-lg">
             Solutions de{" "}
             <span className="text-red-500 drop-shadow-md">Télédistribution</span>
-            <br />et Réseaux
           </h1>
 
           <p className="text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed drop-shadow">
             Déploiement d'infrastructures IPTV, DVB-T/C et Fibre Optique pour
-            les environnements exigeants.{" "}
+            les environnements.{" "}
             <span className="text-white font-semibold">
               Hôtellerie, Hôpitaux, Collectivités.
             </span>
@@ -82,10 +81,10 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 w-full sm:w-auto">
             <Link
-              href="#entreprise"
+              href="#contact"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-red-600/90 backdrop-blur-sm text-white font-bold hover:bg-red-600 transition-colors shadow-lg shadow-red-900/50 border border-red-500/50 hover:border-red-500"
             >
-              Notre Expertise
+              Nous contacter
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -102,7 +101,7 @@ export default function Home() {
       {/* ── Clients / Social Proof strip Removed ── */}
 
       {/* ── Affichage Dynamique ── */}
-      <section className="py-24 px-4 bg-white text-slate-900 overflow-hidden">
+      <section id="affichage" className="py-24 px-4 bg-white text-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Left: Video */}
           <div className="w-full lg:w-3/5 relative rounded-3xl overflow-hidden group">
@@ -129,26 +128,26 @@ export default function Home() {
                 Communiquez en temps <span className="text-red-600">réel</span> avec vos audiences
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed">
-                Modernisez votre communication interne et externe. Diffusez, programmez 
-                et centralisez vos contenus multimédias sur un réseau d'écrans professionnels 
+                Modernisez votre communication interne et externe. Diffusez, programmez
+                et centralisez vos contenus multimédias sur un réseau d'écrans professionnels
                 depuis une interface web intuitive.
               </p>
             </div>
 
             <ul className="space-y-5 pt-4 border-t border-gray-100">
               {[
-                { 
-                  title: "Gestion centralisée & Cloud", 
+                {
+                  title: "Gestion centralisée",
                   desc: "Pilotez des dizaines d'écrans en simultané, où que vous soyez.",
                   icon: <Globe2 className="w-5 h-5 text-red-600" />
                 },
-                { 
-                  title: "Contenus Riches", 
+                {
+                  title: "Contenus Riches",
                   desc: "Vidéos, images promotionnelles, flux RSS virtuels, et widgets météo.",
                   icon: <Radio className="w-5 h-5 text-red-600" />
                 },
-                { 
-                  title: "Planification Intelligente", 
+                {
+                  title: "Planification Intelligente",
                   desc: "Programmez des campagnes sur-mesure selon l'heure ou l'audience.",
                   icon: <Satellite className="w-5 h-5 text-red-600" />
                 }
@@ -168,9 +167,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Solutions Section (Bento Grid) ── */}
-      <section id="solutions" className="py-24 px-4 bg-white relative">
-        <div className="max-w-7xl mx-auto space-y-12">
+      {/* ── Solutions Section (Cards) ── */}
+      <section id="solutions" className="py-24 px-4 bg-slate-50 relative border-t border-gray-200">
+        <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">
               Nos Solutions <span className="text-red-500">Techniques</span>
@@ -180,29 +179,80 @@ export default function Home() {
             </p>
           </div>
 
-          <BentoGrid className="max-w-5xl mx-auto">
-            <BentoGridItem
-              title="IPTV & Réseaux IP"
-              description="Distribution de flux audiovisuels sur réseau IP. Idéal pour l'hôtellerie et les hôpitaux avec des services interactifs sur mesure."
-              icon={solutionConfig.iptv.icon}
-              className={solutionConfig.iptv.colSpan}
-              header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-red-50 to-rose-100/50" />}
-            />
-            <BentoGridItem
-              title="DVB-T/C (Coaxial)"
-              description="Têtes de station compactes pour une diffusion classique et robuste sur vos réseaux coaxiaux existants."
-              icon={solutionConfig["dvb-t-c"].icon}
-              className={solutionConfig["dvb-t-c"].colSpan}
-              header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-slate-50 to-gray-100/50" />}
-            />
-            <BentoGridItem
-              title="Réception BIS"
-              description="Solutions de réception satellite et terrestre professionnelles, traitant les signaux avec une très haute fiabilité."
-              icon={solutionConfig.bis.icon}
-              className={solutionConfig.bis.colSpan}
-              header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-slate-50 to-gray-100/50" />}
-            />
-          </BentoGrid>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Réseaux et IPTV */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-red-100 transition-all duration-300 flex flex-col group">
+              <div className="relative h-56 w-full bg-slate-100 overflow-hidden">
+                <Image src="/technicienServeur.png" alt="Réseaux et IPTV" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-8 space-y-4 flex-1 flex flex-col">
+                <div className="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 mb-2 shadow-sm group-hover:scale-110 transition-transform">
+                  <MonitorPlay className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">Réseaux et IPTV</h3>
+                <p className="text-slate-600 leading-relaxed flex-1">
+                  {data.solutions.find(s => s.id === 'iptv')?.description}
+                </p>
+                <ul className="space-y-2 pt-4 border-t border-gray-100 mt-4">
+                  {data.solutions.find(s => s.id === 'iptv')?.features.map(f => (
+                    <li key={f} className="flex items-center gap-3 text-sm text-slate-600 font-medium">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Réception BIS */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-red-100 transition-all duration-300 flex flex-col group">
+              <div className="relative h-56 w-full bg-slate-100 overflow-hidden">
+                <Image src="/BIS.jpg" alt="Réception BIS" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-8 space-y-4 flex-1 flex flex-col">
+                <div className="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 mb-2 shadow-sm group-hover:scale-110 transition-transform">
+                  <Satellite className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">Réception BIS</h3>
+                <p className="text-slate-600 leading-relaxed flex-1">
+                  {data.solutions.find(s => s.id === 'bis')?.description}
+                </p>
+                <ul className="space-y-2 pt-4 border-t border-gray-100 mt-4">
+                  {data.solutions.find(s => s.id === 'bis')?.features.map(f => (
+                    <li key={f} className="flex items-center gap-3 text-sm text-slate-600 font-medium">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* DVB-T/C */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-red-100 transition-all duration-300 flex flex-col group">
+              <div className="relative h-56 w-full bg-slate-100 overflow-hidden">
+                <Image src="/DVB-T.png" alt="DVB-T/C" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-8 space-y-4 flex-1 flex flex-col">
+                <div className="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 mb-2 shadow-sm group-hover:scale-110 transition-transform">
+                  <Radio className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">DVB-T/C</h3>
+                <p className="text-slate-600 leading-relaxed flex-1">
+                  {data.solutions.find(s => s.id === 'dvb-t-c')?.description}
+                </p>
+                <ul className="space-y-2 pt-4 border-t border-gray-100 mt-4">
+                  {data.solutions.find(s => s.id === 'dvb-t-c')?.features.map(f => (
+                    <li key={f} className="flex items-center gap-3 text-sm text-slate-600 font-medium">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -222,33 +272,43 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                Icon: ShieldCheck,
+                image: "/install_qualite.png",
+                icon: <ShieldCheck className="w-6 h-6 text-red-600" />,
                 title: "Qualité d'Installation",
-                body: "Nos équipes techniques certifiées assurent une pose dans les règles de l'art, garantissant la longévité et la performance de vos équipements.",
+                body: "Nos équipes techniques certifiées garantissent la longévité et la performance de vos équipements.",
               },
               {
-                Icon: Wrench,
-                title: "Ingénierie & Audit",
-                body: "Étude de propagation, bilans de liaison et architecture réseaux sur mesure pour répondre précisément à vos contraintes techniques.",
+                image: "/audit_ingenierie.png",
+                icon: <Wrench className="w-6 h-6 text-red-600" />,
+                title: "Maintenance",
+                body: "Contrats de maintenance personnalisés pour une disponibilité maximale.",
               },
               {
-                Icon: HeadphonesIcon,
-                title: "Support B2B Dédié",
-                body: "Un accompagnement réactif post-déploiement. Contrats de maintenance (SLA) personnalisés pour une disponibilité maximale.",
+                image: "/support_b2b.png",
+                icon: <HeadphonesIcon className="w-6 h-6 text-red-600" />,
+                title: "Support Dédié",
+                body: "Support technique et commercial dédié pour répondre à toutes vos demandes.",
               },
-            ].map(({ Icon, title, body }) => (
+            ].map(({ image, icon, title, body }) => (
               <div
                 key={title}
-                className="p-8 rounded-2xl bg-white border border-gray-200 hover:border-red-200 hover:shadow-sm transition-all duration-300 group"
+                className="rounded-2xl bg-white border border-gray-200 hover:border-red-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
-                  <Icon className="w-6 h-6 text-red-600" />
+                <div className="relative h-56 w-full bg-slate-100 overflow-hidden">
+                  <Image src={image} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{title}</h3>
-                <p className="text-slate-600 leading-relaxed">{body}</p>
+                <div className="p-8 flex-1 flex flex-col relative">
+                  <div className="w-14 h-14 rounded-xl bg-white border border-red-100 flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform absolute -top-7 left-8">
+                    <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center">
+                      {icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3">{title}</h3>
+                  <p className="text-slate-600 leading-relaxed flex-1">{body}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -256,7 +316,7 @@ export default function Home() {
       </section>
 
       {/* ── Nos Collaborateurs ── */}
-      <section className="py-24 px-4 bg-white border-t border-gray-200">
+      <section id="partenaires" className="py-24 px-4 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto text-center space-y-12">
           <div className="space-y-3">
             <p className="text-sm font-semibold tracking-widest uppercase text-red-600">
@@ -266,24 +326,24 @@ export default function Home() {
               Nos Collaborateurs
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-              Ils nous font confiance pour bâtir des solutions robustes et pérennes.
+              Ils nous font confiance pour bâtir des solutions robustes.
             </p>
           </div>
-          
+
           <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
             {data.collaborateurs.map((collab) => {
               const isImage = collab.logo.startsWith("/") || collab.logo.startsWith("http");
               const IconComp = !isImage ? (partnerIcons[collab.logo] || Building2) : null;
-              
+
               return (
                 <div key={collab.id} className="flex flex-col items-center gap-4 group cursor-pointer">
                   <div className="w-24 h-24 relative bg-slate-50 border border-gray-200 rounded-full flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:border-red-300 transition-all duration-300 overflow-hidden">
                     {isImage ? (
-                      <Image 
-                        src={collab.logo} 
-                        alt={collab.name} 
-                        width={60} 
-                        height={60} 
+                      <Image
+                        src={collab.logo}
+                        alt={collab.name}
+                        width={60}
+                        height={60}
                         className="object-contain group-hover:scale-110 transition-transform duration-300"
                       />
                     ) : (
@@ -307,12 +367,12 @@ export default function Home() {
       {/* ── Footer ── */}
       <footer className="py-8 border-t border-gray-200 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} ESAT. Solutions Réseaux B2B.</p>
+          <p>© {new Date().getFullYear()} ESAT. Solutions Téléaffiage.</p>
           <a
             href="mailto:contact@esat.dz"
             className="text-red-600 hover:text-red-700 font-medium transition-colors"
           >
-            contact@esat.dz
+            zberdi@esat-dz.com
           </a>
         </div>
       </footer>
