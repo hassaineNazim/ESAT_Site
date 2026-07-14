@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f1f5f9" stroke-width="1.5"/>
+    </pattern>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#64748b" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  <rect x="20" y="20" width="360" height="260" rx="12" fill="none" stroke="#e2e8f0" stroke-width="2" />
+  
+  <!-- Antenna Pole / Mast -->
+  <line x1="80" y1="230" x2="80" y2="70" stroke="#94a3b8" stroke-width="8" stroke-linecap="round" />
+  <line x1="80" y1="230" x2="110" y2="230" stroke="#475569" stroke-width="4" />
+  
+  <!-- Mounting Bracket -->
+  <rect x="72" y="110" width="16" height="24" rx="2" fill="#475569" />
+  
+  <!-- Main Antenna Boom -->
+  <line x1="78" y1="120" x2="310" y2="120" stroke="#e2e8f0" stroke-width="6" stroke-linecap="round" />
+  <line x1="78" y1="120" x2="310" y2="120" stroke="#64748b" stroke-width="2" />
+  
+  <!-- Dipole & Reflector -->
+  <!-- Reflectors (Left angled) -->
+  <path d="M 60 70 L 85 120 L 60 170" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 70 80 L 90 120 L 70 160" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Directors (Elements decreasing in length along the boom) -->
+  
+        <line x1="110" y1="85" x2="110" y2="155" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round" />
+        <circle cx="110" cy="120" r="3.5" fill="#ef4444" />
+      
+
+        <line x1="136" y1="87.5" x2="136" y2="152.5" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round" />
+        <circle cx="136" cy="120" r="3.5" fill="#ef4444" />
+      
+
+        <line x1="162" y1="90" x2="162" y2="150" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round" />
+        <circle cx="162" cy="120" r="3.5" fill="#ef4444" />
+      
+
+        <line x1="188" y1="92.5" x2="188" y2="147.5" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round" />
+        <circle cx="188" cy="120" r="3.5" fill="#ef4444" />
+      
+
+        <line x1="214" y1="95" x2="214" y2="145" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round" />
+        <circle cx="214" cy="120" r="3.5" fill="#ef4444" />
+      
+
+        <line x1="240" y1="97.5" x2="240" y2="142.5" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round" />
+        <circle cx="240" cy="120" r="3.5" fill="#ef4444" />
+      
+
+        <line x1="266" y1="100" x2="266" y2="140" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round" />
+        <circle cx="266" cy="120" r="3.5" fill="#ef4444" />
+      
+
+        <line x1="292" y1="102.5" x2="292" y2="137.5" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round" />
+        <circle cx="292" cy="120" r="3.5" fill="#ef4444" />
+      
+  
+  <!-- Signal Waves (UHF signal concept) -->
+  <path d="M 340 100 A 30 30 0 0 1 340 140" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" />
+  <path d="M 355 90 A 45 45 0 0 1 355 150" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2" stroke-linecap="round" />
+  <path d="M 370 80 A 60 60 0 0 1 370 160" fill="none" stroke="#ef4444" stroke-width="1" stroke-linecap="round" />
+
+  <text x="200" y="260" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#64748b" letter-spacing="1">HIGH-PERFORMANCE UHF ANTENNA</text>
+</svg>

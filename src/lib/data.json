@@ -41,25 +41,25 @@
                     "id": "p1",
                     "name": "Station DVB-T Modulaire 8 Canaux",
                     "description": "Tête de station haute densité pour la conversion satellite vers TNT.",
-                    "image": "/images/station-dvbt.jpg"
+                    "image": "/images/station-dvbt.svg"
                 },
                 {
                     "id": "p2",
                     "name": "Modulateur HDMI vers DVB-T",
                     "description": "Encodeur et modulateur professionnel pour injecter des canaux HDMI sur le réseau coaxial.",
-                    "image": "/images/modulateur-hdmi.jpg"
+                    "image": "/images/modulateur-hdmi.svg"
                 },
                 {
                     "id": "p3",
                     "name": "Émetteur Optique 1550nm",
                     "description": "Transmission du signal RF sur fibre optique avec une puissance de sortie élevée.",
-                    "image": "/images/emetteur-optique.jpg"
+                    "image": "/images/emetteur-optique.svg"
                 },
                 {
                     "id": "p4",
                     "name": "Récepteur Optique de Bâtiment",
                     "description": "Conversion optique vers RF pour les installations FTTH coaxiales.",
-                    "image": "/images/recepteur-optique.jpg"
+                    "image": "/images/recepteur-optique.svg"
                 }
             ]
         },
@@ -70,25 +70,25 @@
                     "id": "p5",
                     "name": "Multiswitch Cascadable 9x32",
                     "description": "Commutateur pour 2 satellites et signal terrestre, avec 32 sorties utilisateurs.",
-                    "image": "/images/multiswitch.jpg"
+                    "image": "/images/multiswitch.svg"
                 },
                 {
                     "id": "p6",
                     "name": "Amplificateur de Ligne BIS",
                     "description": "Amplification 30dB pour compenser les pertes sur les longues distances.",
-                    "image": "/images/ampli-bis.jpg"
+                    "image": "/images/ampli-bis.svg"
                 },
                 {
                     "id": "p7",
                     "name": "Centrale Amplificatrice Programmable",
                     "description": "Filtrage et amplification des canaux UHF/VHF avec réglage auto.",
-                    "image": "/images/centrale-uhf.jpg"
+                    "image": "/images/centrale-uhf.svg"
                 },
                 {
                     "id": "p8",
                     "name": "Dérivateur 4 Voies 15dB",
                     "description": "Dérivateur blindé haute qualité pour réseaux de distribution.",
-                    "image": "/images/derivateur.jpg"
+                    "image": "/images/derivateur.svg"
                 }
             ]
         },
@@ -99,25 +99,25 @@
                     "id": "p9",
                     "name": "Antenne UHF Haute Performance",
                     "description": "Antenne terrestre optimisée pour le rejet 4G/5G.",
-                    "image": "/images/antenne-uhf.jpg"
+                    "image": "/images/antenne-uhf.svg"
                 },
                 {
                     "id": "p10",
                     "name": "LNB Quattro Professionnel",
                     "description": "Tête de réception satellite spéciale multiswitches avec très faible bruit (0.1dB).",
-                    "image": "/images/lnb-quattro.jpg"
+                    "image": "/images/lnb-quattro.svg"
                 },
                 {
                     "id": "p11",
                     "name": "Câble Coaxial VATC 17",
                     "description": "Câble cuivre pour liaisons de haute qualité (bobine de 100m).",
-                    "image": "/images/cable-coax.jpg"
+                    "image": "/images/cable-coax.svg"
                 },
                 {
                     "id": "p12",
                     "name": "Prise TV/FM/SAT Optique",
                     "description": "Terminaison pour les réseaux FTTH avec sorties RF séparées.",
-                    "image": "/images/prise-tv.jpg"
+                    "image": "/images/prise-tv.svg"
                 }
             ]
         }
@@ -127,19 +127,19 @@
             "id": "r1",
             "title": "Hôtel 5 Étoiles - IPTV",
             "description": "Installation complète d'une tête de station IPTV pour 300 chambres.",
-            "image": "/images/realisation-hotel.jpg"
+            "image": "/images/realisation-hotel.svg"
         },
         {
             "id": "r2",
             "title": "Hôpital Régional - DVB-T",
             "description": "Rénovation du réseau coaxial et modernisation de la tête de station avec transmodulation.",
-            "image": "/images/realisation-hopital.jpg"
+            "image": "/images/realisation-hopital.svg"
         },
         {
             "id": "r3",
             "title": "Campus Universitaire - Fibre",
             "description": "Déploiement fibre optique pour la télédistribution sur l'ensemble du campus (15 bâtiments).",
-            "image": "/images/realisation-campus.jpg"
+            "image": "/images/realisation-campus.svg"
         }
     ],
     "collaborateurs": [
@@ -162,11 +162,6 @@
             "id": "collab-polytron",
             "name": "Polytron",
             "logo": "/collaborateurs/polytron.png"
-        },
-        {
-            "id": "collab-5",
-            "name": "Partenaire E",
-            "logo": "ShieldCheck"
         }
     ]
 }

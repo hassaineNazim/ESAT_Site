@@ -1,26 +1,43 @@
-import { Mail } from "lucide-react";
+import { ReactNode } from "react";
+import { Mail, Package } from "lucide-react";
+import Image from "next/image";
+import { contactMailto } from "@/lib/site";
 
 interface ProductCardProps {
     id: string;
     name: string;
     description: string;
-    image: string;
+    image?: string;
+    /** Icône de la catégorie, affichée en attendant les photos produits */
+    icon?: ReactNode;
 }
 
-export function ProductCard({ id, name, description, image }: ProductCardProps) {
-    const mailSubject = encodeURIComponent(`Devis pour: ${name} (Réf: ${id})`);
-    const mailToLink = `mailto:contact@entreprise.dz?subject=${mailSubject}`;
+export function ProductCard({ id, name, description, image, icon }: ProductCardProps) {
+    const mailToLink = contactMailto(`Devis pour: ${name} (Réf: ${id})`);
 
     return (
         <div
             id={id}
-            className="group flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-red-200 hover:shadow-md hover:shadow-red-100/50 transition-all duration-300"
+            className="group flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-red-200 hover:shadow-lg hover:shadow-red-100/40 hover:-translate-y-1 transition-all duration-300"
         >
-            {/* Product image placeholder */}
-            <div className="aspect-[4/3] bg-slate-50 border-b border-gray-200 relative overflow-hidden flex items-center justify-center p-8">
-                <div className="text-slate-400 font-medium text-sm text-center leading-relaxed">
-                    {image.split("/").pop()?.replace(".jpg", "")}
-                </div>
+            {/* Visuel produit */}
+            <div className="aspect-[4/3] bg-gradient-to-br from-slate-50 to-slate-100 border-b border-gray-200 relative overflow-hidden flex items-center justify-center">
+                {image ? (
+                    <div className="relative w-full h-full">
+                        <Image
+                            src={image}
+                            alt={name}
+                            fill
+                            sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                            className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                            priority={id === "p1" || id === "p5" || id === "p9"}
+                        />
+                    </div>
+                ) : (
+                    <div className="w-20 h-20 rounded-2xl bg-white border border-red-100 shadow-sm flex items-center justify-center text-red-600 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                        {icon ?? <Package className="w-9 h-9" />}
+                    </div>
+                )}
             </div>
 
             <div className="p-6 flex flex-col flex-1">

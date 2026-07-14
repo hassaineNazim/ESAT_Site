@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f1f5f9" stroke-width="1.5"/>
+    </pattern>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#64748b" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  <rect x="20" y="20" width="360" height="260" rx="12" fill="none" stroke="#e2e8f0" stroke-width="2" />
+  
+  <!-- Multiswitch Metal Box -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="70" width="300" height="150" rx="8" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2" />
+    <rect x="55" y="75" width="290" height="140" rx="6" fill="#e2e8f0" />
+  </g>
+  
+  <!-- Inputs (Top) -->
+  <g>
+    
+        <!-- Coax Input Connector -->
+        <rect x="75" y="50" width="10" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="80" cy="48" r="1.5" fill="#e2e8f0" />
+        <!-- Color coding or markings -->
+        <circle cx="80" cy="60" r="3" fill="#ef4444" />
+      
+
+        <!-- Coax Input Connector -->
+        <rect x="103" y="50" width="10" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="108" cy="48" r="1.5" fill="#e2e8f0" />
+        <!-- Color coding or markings -->
+        <circle cx="108" cy="60" r="3" fill="#ef4444" />
+      
+
+        <!-- Coax Input Connector -->
+        <rect x="131" y="50" width="10" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="136" cy="48" r="1.5" fill="#e2e8f0" />
+        <!-- Color coding or markings -->
+        <circle cx="136" cy="60" r="3" fill="#ef4444" />
+      
+
+        <!-- Coax Input Connector -->
+        <rect x="159" y="50" width="10" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="164" cy="48" r="1.5" fill="#e2e8f0" />
+        <!-- Color coding or markings -->
+        <circle cx="164" cy="60" r="3" fill="#ef4444" />
+      
+
+        <!-- Coax Input Connector -->
+        <rect x="187" y="50" width="10" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="192" cy="48" r="1.5" fill="#e2e8f0" />
+        <!-- Color coding or markings -->
+        <circle cx="192" cy="60" r="3" fill="#3b82f6" />
+      
+
+        <!-- Coax Input Connector -->
+        <rect x="215" y="50" width="10" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="220" cy="48" r="1.5" fill="#e2e8f0" />
+        <!-- Color coding or markings -->
+        <circle cx="220" cy="60" r="3" fill="#3b82f6" />
+      
+
+        <!-- Coax Input Connector -->
+        <rect x="243" y="50" width="10" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="248" cy="48" r="1.5" fill="#e2e8f0" />
+        <!-- Color coding or markings -->
+        <circle cx="248" cy="60" r="3" fill="#3b82f6" />
+      
+
+        <!-- Coax Input Connector -->
+        <rect x="271" y="50" width="10" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="276" cy="48" r="1.5" fill="#e2e8f0" />
+        <!-- Color coding or markings -->
+        <circle cx="276" cy="60" r="3" fill="#3b82f6" />
+      
+
+        <!-- Coax Input Connector -->
+        <rect x="299" y="50" width="10" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="304" cy="48" r="1.5" fill="#e2e8f0" />
+        <!-- Color coding or markings -->
+        <circle cx="304" cy="60" r="3" fill="#10b981" />
+      
+  </g>
+  <text x="200" y="85" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#475569" font-weight="bold">9 SATELLITE &amp; TERRESTRIAL INPUTS</text>
+  
+  <!-- Outputs (Bottom) -->
+  <g>
+    
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="65" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="69" cy="242" r="1" fill="#e2e8f0" />
+        <text x="69" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">1</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="88" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="92" cy="242" r="1" fill="#e2e8f0" />
+        <text x="92" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">2</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="111" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="115" cy="242" r="1" fill="#e2e8f0" />
+        <text x="115" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">3</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="134" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="138" cy="242" r="1" fill="#e2e8f0" />
+        <text x="138" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">4</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="157" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="161" cy="242" r="1" fill="#e2e8f0" />
+        <text x="161" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">5</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="180" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="184" cy="242" r="1" fill="#e2e8f0" />
+        <text x="184" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">6</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="203" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="207" cy="242" r="1" fill="#e2e8f0" />
+        <text x="207" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">7</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="226" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="230" cy="242" r="1" fill="#e2e8f0" />
+        <text x="230" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">8</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="249" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="253" cy="242" r="1" fill="#e2e8f0" />
+        <text x="253" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">9</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="272" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="276" cy="242" r="1" fill="#e2e8f0" />
+        <text x="276" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">10</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="295" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="299" cy="242" r="1" fill="#e2e8f0" />
+        <text x="299" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">11</text>
+      
+
+        <!-- Coax Output Connectors (Visual representation of 12 ports out of 32 for screen spacing) -->
+        <rect x="318" y="220" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" />
+        <circle cx="322" cy="242" r="1" fill="#e2e8f0" />
+        <text x="322" y="215" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle" font-weight="bold">12</text>
+      
+  </g>
+  
+  <!-- Dynamic Logo/Badge in center -->
+  <rect x="140" y="115" width="120" height="40" rx="4" fill="#1e293b" />
+  <text x="200" y="132" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">ESAT B2B</text>
+  <text x="200" y="145" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#ef4444" font-weight="bold">9 x 32 MULTISWITCH</text>
+
+  <text x="200" y="270" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#64748b" letter-spacing="1">CASCADABLE MULTISWITCH 9x32</text>
+</svg>
