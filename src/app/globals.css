@@ -70,11 +70,74 @@ h3 {
   animation-delay: 300ms;
 }
 
+/* Ouverture de la lightbox (galerie installations) */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out both;
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.25s cubic-bezier(0.21, 0.7, 0.35, 1) both;
+}
+
+/* Bande défilante (Nos Projets & Références) — boucle CSS pure, sans JS */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-viewport {
+  overflow: hidden;
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.marquee-viewport:hover .marquee-track,
+.marquee-viewport:focus-within .marquee-track,
+.marquee-viewport:active .marquee-track {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .animate-fade-up {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-scale-in {
     animation: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  .marquee-viewport {
+    overflow-x: auto;
   }
 }

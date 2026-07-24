@@ -1,11 +1,10 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
 /**
  * Content-Security-Policy — site statique sans script tiers.
- * `unsafe-inline` est requis par les scripts/styles inline de Next (pages
- * statiques sans nonce) ; tout chargement externe reste bloqué, ainsi que
- * les plugins, les <base> détournés et l'inclusion du site dans une iframe.
- * frame-src limité à Google Maps (carte de la section Contact).
+ * En développement, pas de CSP stricte pour éviter tout conflit avec HMR / DevTools.
  */
 const contentSecurityPolicy = [
   "default-src 'self'",
@@ -23,7 +22,7 @@ const contentSecurityPolicy = [
 ].join("; ");
 
 const securityHeaders = [
-  { key: "Content-Security-Policy", value: contentSecurityPolicy },
+  ...(isDev ? [] : [{ key: "Content-Security-Policy", value: contentSecurityPolicy }]),
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
@@ -43,8 +42,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
-    formats: ["image/avif", "image/webp"],
-    // SVG produits internes uniquement : servis en sandbox, scripts interdits.
+    // En dev, désactivation de la ré-encodation CPU/RAM intensive pour éviter tout lag / saturation processeur
+    unoptimized: isDev,
+    formats: ["image/webp"],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     minimumCacheTTL: 60 * 60 * 24 * 30,
@@ -56,8 +56,6 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
       {
-        // Assets médias de /public : cache long côté navigateur/CDN,
-        // avec revalidation différée (les noms ne sont pas hashés).
         source:
           "/:path*.(svg|jpg|jpeg|png|webp|avif|ico|mp4)",
         headers: [

@@ -122,26 +122,6 @@
             ]
         }
     },
-    "realisations": [
-        {
-            "id": "r1",
-            "title": "Hôtel 5 Étoiles - IPTV",
-            "description": "Installation complète d'une tête de station IPTV pour 300 chambres.",
-            "image": "/images/realisation-hotel.svg"
-        },
-        {
-            "id": "r2",
-            "title": "Hôpital Régional - DVB-T",
-            "description": "Rénovation du réseau coaxial et modernisation de la tête de station avec transmodulation.",
-            "image": "/images/realisation-hopital.svg"
-        },
-        {
-            "id": "r3",
-            "title": "Campus Universitaire - Fibre",
-            "description": "Déploiement fibre optique pour la télédistribution sur l'ensemble du campus (15 bâtiments).",
-            "image": "/images/realisation-campus.svg"
-        }
-    ],
     "collaborateurs": [
         {
             "id": "collab-lg",

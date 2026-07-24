@@ -25,13 +25,6 @@ export interface Solution {
   features: string[];
 }
 
-export interface Realisation {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-}
-
 export interface Collaborateur {
   id: string;
   name: string;
@@ -41,7 +34,6 @@ export interface Collaborateur {
 const catalogue: Record<string, Category> = data.catalogue;
 
 export const solutions: Solution[] = data.solutions;
-export const realisations: Realisation[] = data.realisations;
 export const collaborateurs: Collaborateur[] = data.collaborateurs;
 
 /** Liste ordonnée des catégories { slug, name } pour navigation, footer et sitemap. */

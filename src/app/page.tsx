@@ -1,4 +1,4 @@
-import { solutions, realisations, collaborateurs } from "@/lib/catalogue";
+import { solutions, collaborateurs } from "@/lib/catalogue";
 import {
   MonitorPlay,
   Radio,
@@ -17,6 +17,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ContactSection } from "@/components/ContactSection";
 import { LazyVideo } from "@/components/LazyVideo";
+import { InstallationsGallery } from "@/components/InstallationsGallery";
+import { ProjectsCarousel } from "@/components/ProjectsCarousel";
 
 /* Cartes Solutions : icône + visuel par id de data.json.
    Les visuels basse résolution (DVB-T, BIS) sont affichés en `contain`
@@ -25,7 +27,7 @@ const solutionCards = [
   {
     id: "iptv",
     icon: MonitorPlay,
-    image: "/technicienServeur.jpg",
+    image: "/couverture.jpg",
     cover: true,
     width: 0,
     height: 0,
@@ -112,15 +114,15 @@ export default function Home() {
         {/* Image de fond */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/technicienServeur.jpg"
-            alt="Technicien ESAT installant une infrastructure de télédistribution"
+            src="/couverture.jpg"
+            alt="Technicien ESAT Solutions TV au stade"
             fill
             sizes="100vw"
             className="object-cover object-center"
             priority
           />
           {/* Dégradé pour la lisibilité du texte */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/85 via-slate-900/70 to-slate-950/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-slate-900/60 to-slate-950/85" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-8">
@@ -307,6 +309,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Une Installation Professionnelle ── */}
+      <InstallationsGallery />
+
+      {/* ── Nos Projets & Références ── */}
+      <ProjectsCarousel />
+
       {/* ── Expertise & Services ── */}
       <section id="entreprise" className="py-24 px-4 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto">
@@ -348,62 +356,6 @@ export default function Home() {
                     {title}
                   </h3>
                   <p className="text-slate-600 leading-relaxed flex-1">{body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Nos Réalisations ── */}
-      <section id="realisations" className="py-24 px-4 bg-white border-t border-gray-200">
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <p className="text-sm font-semibold tracking-widest uppercase text-red-600">
-              Projets Réalisés
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">
-              Nos <span className="text-red-600">Réalisations</span> sur le terrain
-            </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Découvrez quelques exemples de déploiements d’infrastructures de télédistribution et réseaux complexes menés par nos ingénieurs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {realisations.map((realisation) => (
-              <div
-                key={realisation.id}
-                className="group rounded-2xl bg-slate-50 border border-gray-200 overflow-hidden hover:border-red-200 hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              >
-                <div className="relative h-56 w-full bg-slate-200 overflow-hidden">
-                  <Image
-                    src={realisation.image}
-                    alt={realisation.title}
-                    fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md tracking-wider uppercase">
-                    Étude &amp; Pose
-                  </div>
-                </div>
-                <div className="p-8 flex-1 flex flex-col justify-between space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-red-600 transition-colors">
-                      {realisation.title}
-                    </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      {realisation.description}
-                    </p>
-                  </div>
-                  <Link
-                    href="#contact"
-                    className="group inline-flex items-center gap-1.5 text-red-600 font-bold hover:text-red-700 transition-colors text-sm"
-                  >
-                    Demander une étude similaire
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
                 </div>
               </div>
             ))}
