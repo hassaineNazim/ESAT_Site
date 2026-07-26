@@ -20,14 +20,12 @@ import { LazyVideo } from "@/components/LazyVideo";
 import { InstallationsGallery } from "@/components/InstallationsGallery";
 import { ProjectsCarousel } from "@/components/ProjectsCarousel";
 
-/* Cartes Solutions : icône + visuel par id de data.json.
-   Les visuels basse résolution (DVB-T, BIS) sont affichés en `contain`
-   sur fond dégradé pour éviter l'agrandissement flou. */
+/* Cartes Solutions : icône + visuel par id de data.json. */
 const solutionCards = [
   {
     id: "iptv",
     icon: MonitorPlay,
-    image: "/couverture.jpg",
+    image: "/solutions/iptv.jpg",
     cover: true,
     width: 0,
     height: 0,
@@ -35,18 +33,18 @@ const solutionCards = [
   {
     id: "dvb-t-c",
     icon: Radio,
-    image: "/DVB-T.png",
-    cover: false,
-    width: 300,
-    height: 168,
+    image: "/solutions/dvb-t-c.jpg",
+    cover: true,
+    width: 0,
+    height: 0,
   },
   {
     id: "bis",
     icon: Satellite,
-    image: "/BIS.jpg",
-    cover: false,
-    width: 263,
-    height: 192,
+    image: "/solutions/bis.jpg",
+    cover: true,
+    width: 0,
+    height: 0,
   },
 ].map((cfg) => ({
   ...cfg,

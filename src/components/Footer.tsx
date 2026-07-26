@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Satellite, Phone, Mail, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { CurrentYear } from "@/components/CurrentYear";
 import { categories } from "@/lib/catalogue";
 import { SITE } from "@/lib/site";
@@ -21,10 +22,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
         {/* Marque */}
         <div className="space-y-5">
-          <Link href="/" className="inline-flex items-center gap-3">
-            <span className="w-11 h-11 rounded-xl bg-red-600 flex items-center justify-center shadow-lg shadow-red-950/40">
-              <Satellite className="w-6 h-6 text-white" />
-            </span>
+          <Link href="/" className="inline-flex items-center gap-2.5">
+            <Image
+              src="/Logo-ESat.png"
+              alt="ESAT Logo"
+              width={130}
+              height={44}
+              className="h-11 w-auto"
+            />
             <span className="text-2xl font-extrabold tracking-tight text-white">
               E-SAT
             </span>
@@ -124,6 +129,10 @@ export default function Footer() {
           <p>
             © <CurrentYear /> ESAT — Solutions de Télédistribution.
             Tous droits réservés.
+          </p>
+          <p>
+            Développé par{" "}
+            <span className="text-slate-300 font-medium">Hassaine Nazim</span>
           </p>
           <p>
             {SITE.address.city}, {SITE.address.countryLabel}

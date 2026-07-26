@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk, Instrument_Serif, IBM_Plex_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SITE } from "@/lib/site";
@@ -8,6 +8,21 @@ import "./globals.css";
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// Réservés à la galerie "Installations" (direction éditoriale premium).
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -138,7 +153,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${spaceGrotesk.variable} antialiased bg-white text-slate-900 min-h-screen flex flex-col`}
+        className={`${spaceGrotesk.variable} ${instrumentSerif.variable} ${ibmPlexMono.variable} antialiased bg-white text-slate-900 min-h-screen flex flex-col`}
       >
         <Navbar />
         <main className="flex-1 flex flex-col">{children}</main>

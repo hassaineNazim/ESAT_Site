@@ -2,6 +2,8 @@
 
 @theme inline {
   --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
 }
 
 @theme {
@@ -115,7 +117,7 @@ h3 {
 
 .marquee-track {
   width: max-content;
-  animation: marquee 42s linear infinite;
+  animation: marquee 95s linear infinite;
   will-change: transform;
 }
 

@@ -1,48 +1,49 @@
-import { Building2, Landmark, Hotel, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Landmark, Hotel, Trophy, Factory } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { projectsList, Project } from "@/lib/projects";
+import { projectsList, Project, ProjectType } from "@/lib/projects";
 
-const getCategoryIcon = (category: string): LucideIcon => {
-  const c = category.toLowerCase();
-  if (c.includes("hôtellerie") || c.includes("hôtel")) return Hotel;
-  if (c.includes("institution") || c.includes("ministère") || c.includes("administration"))
-    return Landmark;
-  return Building2;
+const typeIcon: Record<ProjectType, LucideIcon> = {
+  institution: Landmark,
+  stade: Trophy,
+  hotel: Hotel,
+  industrie: Factory,
 };
 
 function ProjectCard({ project, duplicate }: { project: Project; duplicate?: boolean }) {
-  const IconComp = getCategoryIcon(project.category);
+  const IconComp = typeIcon[project.type];
+
+  if (project.image) {
+    return (
+      <article
+        aria-hidden={duplicate || undefined}
+        className="w-[240px] sm:w-[260px] h-64 flex-shrink-0 bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col hover:border-red-200 hover:shadow-lg hover:shadow-slate-200/60 hover:-translate-y-1 transition-all duration-300"
+      >
+        <div className="relative h-40 w-full bg-slate-100 overflow-hidden">
+          <Image
+            src={project.image}
+            alt={project.name}
+            fill
+            sizes="260px"
+            className="object-cover"
+          />
+        </div>
+        <div className="flex-1 flex items-center justify-center px-4 text-center">
+          <h3 className="text-sm font-bold text-slate-900 leading-snug">{project.name}</h3>
+        </div>
+      </article>
+    );
+  }
+
   return (
     <article
       aria-hidden={duplicate || undefined}
-      className="w-[300px] sm:w-[340px] flex-shrink-0 bg-white rounded-2xl border border-gray-200 p-7 flex flex-col hover:border-red-200 hover:shadow-lg hover:shadow-slate-200/60 transition-all duration-300"
+      className="w-[210px] sm:w-[240px] h-64 flex-shrink-0 bg-white rounded-2xl border border-gray-200 px-6 flex flex-col items-center justify-center text-center gap-4 hover:border-red-200 hover:shadow-lg hover:shadow-slate-200/60 hover:-translate-y-1 transition-all duration-300"
     >
-      <div className="flex items-start justify-between mb-5">
-        <div className="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 shadow-sm">
-          <IconComp className="w-6 h-6" />
-        </div>
-        {project.badge && (
-          <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider border border-gray-200">
-            {project.badge}
-          </span>
-        )}
+      <div className="w-14 h-14 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 shadow-sm">
+        <IconComp className="w-7 h-7" />
       </div>
-
-      <div className="flex-1 flex flex-col space-y-2.5">
-        {project.location && (
-          <div className="flex items-center gap-1.5 text-xs font-semibold text-red-600 uppercase tracking-wider">
-            <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
-            <span>{project.location}</span>
-          </div>
-        )}
-        <h3 className="text-lg font-bold text-slate-900 leading-snug">{project.title}</h3>
-        <p className="text-slate-600 text-sm leading-relaxed flex-1">{project.description}</p>
-        <div className="pt-3 border-t border-gray-100">
-          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-            {project.category}
-          </p>
-        </div>
-      </div>
+      <h3 className="text-base font-bold text-slate-900 leading-snug">{project.name}</h3>
     </article>
   );
 }
